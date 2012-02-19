@@ -5,7 +5,7 @@ $:.unshift File.join(File.dirname(__FILE__), '..', 'google-image-charts')
 
 module GoogleImageCharts  
 
-  VERSION = 0.2
+  VERSION = 0.3
   
   class ChartBase
     attr_accessor :chartTitle, :chartWidth, :chartHeight, :chartLabels, :chartColors
@@ -73,6 +73,7 @@ module GoogleImageCharts
   
   # Load all the chart types
   require 'GoogleImageCharts/line-graph.rb'
+  require 'GoogleImageCharts/pie-chart.rb'
   
 end
 
