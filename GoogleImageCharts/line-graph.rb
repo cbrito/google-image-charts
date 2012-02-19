@@ -16,9 +16,6 @@ module GoogleImageCharts
       # Line graphs are series arrays seperated by pipes
       @chartData.join("|")
     end
-    
-  private
-    
 
   end
 end

@@ -37,7 +37,7 @@ module GoogleImageCharts
       @chartData = Array.new
       data.each_index do |index|
         # Join the data only if it contains an array
-        if data[index].class == "Array"
+        if data[index].class == Array
           @chartData.push data[index].join(",").to_s 
         else
           @chartData.push data[index]

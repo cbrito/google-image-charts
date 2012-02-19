@@ -16,9 +16,6 @@ module GoogleImageCharts
       # Pie Charts are simple data numbers seperated by commas
       @chartData.join(",")
     end
-    
-  private
-    
 
   end
 end
