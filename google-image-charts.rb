@@ -16,8 +16,11 @@ module GoogleImageCharts
       @chartHeight  = chartOptionsHash[:height]
       @chartTitle   = chartOptionsHash[:title]
       self.chartData=(chartOptionsHash[:data])  # Should be an array of data arrays
+      
       @chartLabels  = chartOptionsHash[:labels]  # Should be an array of labels
       @chartLabelPosition  = "b" if chartOptionsHash[:labels].nil? == false
+      
+      @chartColors = chartOptionsHash[:colors]
     end
     
     def chartData
@@ -25,6 +28,8 @@ module GoogleImageCharts
     end
     
     def chartData=(data)
+      # Take array of arrays and flatten to array of strings
+      
       @chartData = Array.new
       data.each_index do |index|
         @chartData.push data[index].join(",").to_s
@@ -36,6 +41,7 @@ module GoogleImageCharts
                           when position == :top then "t"
                           when position == :left then "l"
                           when position == :right then "r"
+                          when position == :bottom then "b"
                           else "b"
                           end
                             
