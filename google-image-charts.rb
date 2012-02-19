@@ -1,5 +1,8 @@
 require 'uri'
 
+# Set the load path for classes in this lib:
+$:.unshift File.join(File.dirname(__FILE__), '..', 'google-image-charts')
+
 module GoogleImageCharts  
 
   VERSION = 0.2
