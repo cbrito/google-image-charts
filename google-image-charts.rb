@@ -9,8 +9,15 @@ module GoogleImageCharts
     
     @@CHART_URI_BASE = "http://chart.apis.google.com/chart?"
     
-    def initialize
+    def initialize(chartOptionsHash)
       @chartSpecificOptions = ""  # Should be overridden by child-classes
+      
+      @chartWidth   = chartOptionsHash[:width]
+      @chartHeight  = chartOptionsHash[:height]
+      @chartTitle   = chartOptionsHash[:title]
+      self.chartData=(chartOptionsHash[:data])  # Should be an array of data arrays
+      @chartLabels  = chartOptionsHash[:labels]  # Should be an array of labels
+      @chartLabelPosition  = "b" if chartOptionsHash[:labels].nil? == false
     end
     
     def chartData
