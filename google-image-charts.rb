@@ -2,7 +2,7 @@ require 'uri'
 
 module GoogleImageCharts  
 
-  VERSION = 0.1
+  VERSION = 0.2
   
   class ChartBase
     attr_accessor :chartTitle, :chartWidth, :chartHeight, :chartLabels, :chartColors
