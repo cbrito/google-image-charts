@@ -1,8 +1,8 @@
 # Google Image Charts
 
-Ruby library for interfacing with Google's Image Chart API.
+Ruby library for interfacing with Google's Image Chart API. (Part of the Google Image Visualization API.)
 
-See [http://code.google.com/apis/chart/image/](http://code.google.com/apis/chart/image/) for more information.
+Google Image Charts allows a user to enter series data into a query string and retrieve a PNG or SVG image graph. See [http://code.google.com/apis/chart/image/](http://code.google.com/apis/chart/image/) for more information.
 
 Right now only Line Graphs and Pie Charts are supported. Let me know if you would like to contribute!
 
@@ -46,7 +46,7 @@ Right now only Line Graphs and Pie Charts are supported. Let me know if you woul
 		:title 	=> "Pie Chart Test",
 		:height => 200,
 		:width 	=> 200,
-		:data	=> [15, 85], # Array of data arrays (one for each line)
+		:data	=> [15, 85], 
 		:labels	=> ["This Stinks!", "This is awesome!"],
 		:colors => ["5CB8E6","E68A00"]
 	}
