@@ -11,6 +11,12 @@ module GoogleImageCharts
       @chartSpecificOptions << "&chds=a"      # Chart Scale (automatic scaling by Google)
       
     end
+    
+    def chartDataFlattened
+      # Pie Charts are simple data numbers seperated by commas
+      @chartData.join(",")
+    end
+    
   private
     
 

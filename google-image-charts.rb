@@ -26,7 +26,8 @@ module GoogleImageCharts
       @chartColors = chartOptionsHash[:colors]
     end
     
-    def chartData
+    def chartDataFlattened
+      # Override in subclasses
       @chartData
     end
     
@@ -35,8 +36,14 @@ module GoogleImageCharts
       
       @chartData = Array.new
       data.each_index do |index|
-        @chartData.push data[index].join(",").to_s
+        # Join the data only if it contains an array
+        if data[index].class == "Array"
+          @chartData.push data[index].join(",").to_s 
+        else
+          @chartData.push data[index]
+        end
       end
+      
     end
     
     def set_chart_label_position(position)
@@ -54,7 +61,7 @@ module GoogleImageCharts
       chartURL = @@CHART_URI_BASE
       chartURL << "cht="    + @chartType
       chartURL << "&chs="   + @chartWidth.to_s + "x" + @chartHeight.to_s 
-      chartURL << "&chd=t:" + @chartData.join("|")    if @chartData.nil? == false # Simple text for now
+      chartURL << "&chd=t:" + self.chartDataFlattened if @chartData.nil? == false # Simple text for now
       chartURL << "&chdl="  + @chartLabels.join("|")  if @chartLabels.nil? == false
       chartURL << "&chdlp="  + @chartLabelPosition    if @chartLabels.nil? == false
       chartURL << "&chtt="  + @chartTitle             if @chartTitle.nil? == false
