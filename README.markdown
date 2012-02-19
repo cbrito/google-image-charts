@@ -12,10 +12,10 @@ Right now only Line Graphs and Pie Charts are supported. Let me know if you woul
 	
 	# Populate the chart details
 	chartDetails = {
-		:title 	=> "Test chart"
-		:height => 250
-		:width 	=> 400
-		:data	=> [[4,5,10,6,2,9],[2,2,12,9,11,1]] # Array of data arrays (one for each line)
+		:title 	=> "Test chart",
+		:height => 250,
+		:width 	=> 400,
+		:data	=> [[4,5,10,6,2,9], [2,2,12,9,11,1]], # Array of data arrays (one for each line)
 		:labels	=> ["Series 1", "Series 2"]
 	}
 	
