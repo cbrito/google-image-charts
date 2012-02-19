@@ -58,16 +58,17 @@ module GoogleImageCharts
     end
     
     def chart_url
+      chartURL = ""
       chartURL = @@CHART_URI_BASE
-      chartURL << "cht="    + @chartType
-      chartURL << "&chs="   + @chartWidth.to_s + "x" + @chartHeight.to_s 
-      chartURL << "&chd=t:" + self.chartDataFlattened if @chartData.nil? == false # Simple text for now
-      chartURL << "&chdl="  + @chartLabels.join("|")  if @chartLabels.nil? == false
-      chartURL << "&chdlp="  + @chartLabelPosition    if @chartLabels.nil? == false
-      chartURL << "&chtt="  + @chartTitle             if @chartTitle.nil? == false
-      chartURL << "&chco="  + @chartColors.join(",")  if @chartColors.nil? == false
+      chartURL = chartURL + "cht="    + @chartType
+      chartURL = chartURL + "&chs="   + @chartWidth.to_s + "x" + @chartHeight.to_s 
+      chartURL = chartURL + "&chd=t:" + chartDataFlattened if @chartData.nil? == false # Simple text for now
+      chartURL = chartURL + "&chdl="  + @chartLabels.join("|")  if @chartLabels.nil? == false
+      chartURL = chartURL + "&chdlp="  + @chartLabelPosition    if @chartLabels.nil? == false
+      chartURL = chartURL + "&chtt="  + @chartTitle             if @chartTitle.nil? == false
+      chartURL = chartURL + "&chco="  + @chartColors.join(",")  if @chartColors.nil? == false
       
-      chartURL << @chartSpecificOptions
+      chartURL = chartURL + @chartSpecificOptions
       
       return URI.escape(chartURL)
     end
