@@ -7,7 +7,6 @@ module GoogleImageCharts
       
       @chartType = "lc" #Line chart
       
-      @chartSpecificOptions << "&chxt=x,y"    # Scale labels for the X and Y axis'
       
     end
     
