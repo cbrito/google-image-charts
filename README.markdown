@@ -6,6 +6,10 @@ Google Image Charts allows a user to enter series data into a query string and r
 
 Right now only Line Graphs and Pie Charts are supported. Let me know if you would like to contribute!
 
+## Installation
+
+	gem install google-image-charts
+
 ## Line Graph Example
 ### Code Sample
 	# Load the library
