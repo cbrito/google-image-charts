@@ -22,7 +22,7 @@ module GoogleImageCharts
       
       # These might be set by someone who knows what they are doing, perhaps after reading:
       # https://developers.google.com/chart/image/docs/chart_params
-      @additionalChartOptions = chartOptionsHash[:additionalOptions]
+      @additionalChartOptions = chartOptionsHash.fetch(:additionalOptions, '')
       
       # Support the Google Image Charts POST method which allows up to 16K of chart data
       # https://developers.google.com/chart/image/docs/post_requests
