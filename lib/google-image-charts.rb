@@ -4,9 +4,9 @@ module GoogleImageCharts
   
   class ChartBase
     attr_accessor :chartTitle, :chartWidth, :chartHeight, :chartLabels, :chartColors, :additionalChartOptions, :usePost
-    
-    CHART_URI_BASE = "http://chart.apis.google.com/chart?"
-    
+
+    CHART_URI_BASE = "http://image-charts.com/chart?"
+
     def initialize(chartOptionsHash)
       @chartSpecificOptions = ""  # Should be overridden by child-classes
       
